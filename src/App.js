@@ -19,7 +19,9 @@ function App() {
       
       {isHomePage && (
         <>
-          <h1>Welcome to the App</h1>
+          
+          <h1>GINKO</h1>
+          <h2>Case Closed</h2>
           <button onClick={() => navigate('/login')}>Go to Login</button>
           <button onClick={() => navigate('/signup')}>Go to Sign Up</button>
         </>
