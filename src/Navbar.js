@@ -7,10 +7,22 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <button onClick={() => navigate('/dashboard')}>Dashboard</button>
-      <input type="text" placeholder="Search..." className="search-bar" />
-      <button onClick={() => navigate('/profile')}>Profile</button>
-      <button onClick={() => navigate('/post')}>Post</button>
+      {/* Left side: Circular container with logo and "GINKGO" */}
+      <div className="logo-container" onClick={() => navigate('/dashboard')}>
+        <div className="logo">
+          <img src="/logo.png" alt="Logo" className="logo-image" />
+        </div>
+        <span className="logo-text">GINKGO</span>
+      </div>
+
+      {/* Right side: Navigation buttons */}
+      <div className="nav-buttons">
+        <button onClick={() => navigate('/dashboard')}>Dashboard</button>
+        <button onClick={() => navigate('/post')}>Post</button>
+        <div className="profile-button" onClick={() => navigate('/profile')}>
+          <img src="/profile.png" alt="Profile" className="profile-image" />
+        </div>
+      </div>
     </nav>
   );
 };
