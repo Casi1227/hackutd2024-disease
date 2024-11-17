@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Signup.css';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -23,56 +24,87 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup-container">
-      <h2>Sign Up</h2>
-      <div className="signup-field">
-        <label>Email</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-        />
-      </div>
-      <div className="signup-field">
-        <label>Password</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Enter your password"
-        />
-      </div>
-      <div className="signup-field">
-        <label>Confirm Password</label>
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          placeholder="Confirm your password"
-        />
-      </div>
-      <div className="signup-field">
-        <input
-          type="checkbox"
-          checked={isMedicalProfessional}
-          onChange={(e) => setIsMedicalProfessional(e.target.checked)}
-        />
-        <label>I am a medical professional</label>
-      </div>
-      {isMedicalProfessional && (
+    <div className="signup-page">
+      {/* Left Content Section */}
+      <div className="signup-content">
+        {/* Header with Logo */}
+        <div className="signup-header">
+          <div className="logo-frame">
+            <img src="logo.png" alt="Logo" className="logo-image" />
+          </div>
+          <h2 className="signup-heading">Sign Up</h2>
+        </div>
+
+        {/* Email Input */}
         <div className="signup-field">
-          <label>Medical ID (10 digits)</label>
+          <label>Email</label>
           <input
-            type="text"
-            value={medicalId}
-            onChange={(e) => setMedicalId(e.target.value)}
-            placeholder="Enter your Medical ID"
-            maxLength="10"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
+            className="signup-input"
           />
         </div>
-      )}
-      <button onClick={handleCreateAccount}>Create Account</button>
+
+        {/* Password Input */}
+        <div className="signup-field">
+          <label>Password</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter your password"
+            className="signup-input"
+          />
+        </div>
+
+        {/* Confirm Password Input */}
+        <div className="signup-field">
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            placeholder="Confirm your password"
+            className="signup-input"
+          />
+        </div>
+
+        {/* Medical Professional Checkbox */}
+        <div className="signup-field checkbox-field">
+          <input
+            type="checkbox"
+            checked={isMedicalProfessional}
+            onChange={(e) => setIsMedicalProfessional(e.target.checked)}
+            className="signup-checkbox"
+          />
+          <label>I am a medical professional</label>
+        </div>
+
+        {/* Medical ID Input (Conditional) */}
+        {isMedicalProfessional && (
+          <div className="signup-field">
+            <label>Medical ID (10 digits)</label>
+            <input
+              type="text"
+              value={medicalId}
+              onChange={(e) => setMedicalId(e.target.value)}
+              placeholder="Enter your Medical ID"
+              maxLength="10"
+              className="signup-input"
+            />
+          </div>
+        )}
+
+        {/* Create Account Button */}
+        <button className="signup-button" onClick={handleCreateAccount}>
+          Create Account
+        </button>
+      </div>
+
+      {/* Right Image Section */}
+      <div className="signup-image-section"></div>
     </div>
   );
 };

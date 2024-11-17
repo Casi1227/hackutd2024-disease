@@ -1,0 +1,98 @@
+/* Scoped styles for the Login component */
+.login-page {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Center the content in the left section */
+  .login-content {
+    flex: 0.7; /* Takes up about 70% of the screen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: #f5f5f5;
+  }
+  
+  /* Header with logo */
+  .login-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Circular logo frame */
+  .logo-frame {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D9D9D9;
+  }
+  
+  /* Logo image inside the circular frame */
+  .logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Heading for the login form */
+  .login-heading {
+    font-size: 2rem;
+  }
+  
+  /* Login field styles */
+  .login-field {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+  
+  .login-field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Input styles for login fields */
+  .login-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    background-color: #D9D9D9;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button styling specific to the Login component */
+  .login-button {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 25px;
+    background-color: #AAAAAA;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-button:hover {
+    background-color: #bbb;
+  }
+  
+  /* Right image section */
+  .login-image-section {
+    flex: 0.3; /* Takes up about 30% of the screen */
+    background-image: url('/public/background.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+  }
+  
