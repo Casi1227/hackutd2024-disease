@@ -9,6 +9,11 @@ app.use(express.json());
 
 const PORT = 3001;
 
+// Root endpoint
+app.get('/', (req, res) => {
+    res.send('Welcome to the API! Use /test, /upload-disease, or /get-disease/:hash for specific features.');
+});
+
 // Test endpoint
 app.get('/test', (req, res) => {
     res.json({ message: 'API is working!' });
