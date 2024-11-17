@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -11,27 +12,49 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <div className="login-field">
-        <label>Username</label>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Enter your username"
-        />
+    <div className="login-page">
+      {/* Left Content Section */}
+      <div className="login-content">
+        {/* Header with Logo */}
+        <div className="login-header">
+          <div className="logo-frame">
+            <img src="logo.png" alt="Logo" className="logo-image" />
+          </div>
+          <h2 className="login-heading">Login</h2>
+        </div>
+
+        {/* Username Input */}
+        <div className="login-field">
+          <label>Username</label>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Enter your username"
+            className="login-input"
+          />
+        </div>
+
+        {/* Password Input */}
+        <div className="login-field">
+          <label>Password</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter your password"
+            className="login-input"
+          />
+        </div>
+
+        {/* Login Button */}
+        <button className="login-button" onClick={handleLogin}>
+          Login
+        </button>
       </div>
-      <div className="login-field">
-        <label>Password</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Enter your password"
-        />
-      </div>
-      <button onClick={handleLogin}>Login</button>
+
+      {/* Right Image Section */}
+      <div className="login-image-section"></div>
     </div>
   );
 };
