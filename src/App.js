@@ -51,8 +51,6 @@ import Navbar from './Navbar';
 import Post from './Post';
 import Profile from './Profile';
 import './App.css';
-import Post from './Post';
-import Profile from './Profile';
 
 function App() {
   const navigate = useNavigate();
